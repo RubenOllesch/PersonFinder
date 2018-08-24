@@ -1,4 +1,4 @@
-import getUserElement from '../user/user';
+import getUserElement from '../site/site';
 
 
 export default class UserList {
