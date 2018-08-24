@@ -1,6 +1,7 @@
 import getSiteElement from '../site/site';
-import searchResultBox from '../../constants/siteElements';
+// import searchResultDisplay from '../../constants/siteElements';
 
+const searchResultDisplay = document.querySelector('#searchResultBox');
 
 export default class siteList {
     constructor() {
@@ -26,15 +27,15 @@ export default class siteList {
         // locally save the array in a variable
         const sites = this.sites;
 
-        searchResultBox.innerHTML = '';
+        searchResultDisplay.innerHTML = '';
         console.log(sites.length, sites);
         if (sites.length > 0) {
             // Add the Results to the sitelist
             for (const site of sites) {
-                searchResultBox.appendChild(getSiteElement(site));
+                searchResultDisplay.appendChild(getSiteElement(site));
             }
         } else {
-            searchResultBox.innerHTML = 'Keine Seiten gefunden';
+            searchResultDisplay.innerHTML = 'Keine Seiten gefunden';
         }
     }
 }
