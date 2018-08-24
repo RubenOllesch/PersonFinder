@@ -4,6 +4,8 @@ import searchHandlerInit from './components/searchInputHandler/searchInputHandle
 import searchInput from './constants/siteElements';
 import searchResultBox from './constants/siteElements';
 
+import './main.scss';
+
 
 const init = async () => {
     await chayns.ready;
