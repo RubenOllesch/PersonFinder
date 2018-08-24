@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import SearchInput from './components/searchContainer/searchInput/searchInput';
+import InputHandler from './components/searchContainer/inputHandler/inputHandler';
 import searchInputDelay from './constants/searchInputDelay';
 import SearchHandler from './components/searchContainer/searchHandler';
 
@@ -13,7 +13,7 @@ const init = async () => {
     const searchHandler = new SearchHandler();
 
     /* eslint-disable no-new */
-    new SearchInput(searchInput, searchInputDelay, () => {
+    new InputHandler(searchInput, searchInputDelay, () => {
         searchHandler.newSearch(searchInput.nodeValue);
     });
 
