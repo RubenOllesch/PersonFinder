@@ -25,7 +25,6 @@ export default class UserList {
 
     // function to show the actual Content
     render() {
-
         // locally save the array in a variable
         const users = this.users;
 
