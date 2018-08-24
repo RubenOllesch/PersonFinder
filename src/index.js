@@ -5,7 +5,6 @@ const init = async () => {
     await chayns.ready;
 
 
-
     // start Personfinder
     personFinderInit();
 };
