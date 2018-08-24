@@ -1,23 +1,25 @@
 /* eslint-disable no-console */
-import SearchInput from './components/searchInputHandler/searchInputHandler';
+import SearchInput from './components/searchContainer/searchInput/searchInput';
 import searchInputDelay from './constants/searchInputDelay';
-import { searchInput, showMoreButton } from './constants/siteElements';
-import SiteList from './components/siteList/siteList';
+import SearchHandler from './components/searchContainer/searchHandler';
 
 import './main.scss';
 
+const showMoreButton = document.querySelector('#showMoreButton');
+const searchInput = document.querySelector('#searchInput');
 
 const init = async () => {
     await chayns.ready;
+    const searchHandler = new SearchHandler();
 
     /* eslint-disable no-new */
     new SearchInput(searchInput, searchInputDelay, () => {
-        const siteList = new SiteList();
-        siteList.addSite({});
+        searchHandler.newSearch(searchInput.nodeValue);
     });
 
     showMoreButton.addEventListener('click', () => {
         console.log('showMore');
+        searchHandler.showMore();
     });
 };
 
