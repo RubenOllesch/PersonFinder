@@ -1,4 +1,4 @@
-import getUserElement from '../site/site';
+import getSiteElement from '../site/site';
 
 
 export default class UserList {
@@ -42,7 +42,7 @@ export default class UserList {
 
             // Add the Results to the userlist
             for (const user of users) {
-                userListWrapper.appendChild(getUserElement(user, () => {
+                userListWrapper.appendChild(getSiteElement(user, () => {
                     this.removeUser(user.userId);
                 }));
             }
