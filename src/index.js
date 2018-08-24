@@ -11,9 +11,12 @@ const init = async () => {
 
     /* eslint-disable no-new */
     new SearchHandlerInit(searchInput, 300, () => {
-        console.log('input');
+        console.log('newSearch');
     });
 
+    showMoreButton.addEventListener('click', () => {
+        console.log('showMore');
+    });
     // start Personfinder
     personFinderInit();
 };
