@@ -1,15 +1,17 @@
 /* eslint-disable no-console */
 import personFinderInit from './components/personFinder/personFinder';
-import searchHandlerInit from './components/searchInputHandler/searchInputHandler';
-import searchInput from './constants/siteElements';
-import searchResultBox from './constants/siteElements';
+import SearchHandlerInit from './components/searchInputHandler/searchInputHandler';
+import { searchInput, searchResultBoxfrom } from './constants/siteElements';
 
 import './main.scss';
 
 
 const init = async () => {
     await chayns.ready;
-    searchHandlerInit(searchInput, 300, newSearch());
+    console.log('test');
+    new SearchHandlerInit(searchInput, 300, () => {
+        console.log('input');
+    });
 
     // start Personfinder
     personFinderInit();
