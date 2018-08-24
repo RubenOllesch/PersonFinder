@@ -1,0 +1,37 @@
+.ListItem.ListItem--clickable {
+  cursor: pointer;
+}
+
+.ListItem {
+  width: 100%;
+  border-bottom: 1px solid #d2d9e6;
+}
+
+.ListItem__head {
+  padding-right: 9px;
+  padding-left: 9px;
+  display: flex;
+  align-items: center;
+  height: 64px;
+}
+
+.ListItem .ListItem__head .ListItem__Title .ListItem__Title--headline {
+  margin: 0px;
+}
+
+.ListItem__Image {
+  height: 40px;
+  width: 40px;
+  margin-right: 10px;
+}
+
+.ListItem__Image img {
+  height: 100%;
+  width: 100%;
+  outline: 1px solid rgba(0,0,0,.08);
+}
+
+.ListItem__Title--description {
+  font-size: 85%;
+  opacity: .75;
+}

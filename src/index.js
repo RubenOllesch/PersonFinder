@@ -1,18 +1,26 @@
 /* eslint-disable no-console */
-import modeSwitchInit from './components/modeswitch/modeSwitch';
-import personFinderInit from './components/personFinder/personFinder';
-import SERVER_URL from './constants/server-url';
+import InputHandler from './components/searchContainer/inputHandler/inputHandler';
+import searchInputDelay from './constants/searchInputDelay';
+import SearchHandler from './components/searchContainer/searchHandler';
+
+import './main.scss';
+
+const showMoreButton = document.querySelector('#showMoreButton');
+const searchInput = document.querySelector('#searchInput');
 
 const init = async () => {
     await chayns.ready;
+    const searchHandler = new SearchHandler();
 
-    console.info('ServerUrl for current environment:', SERVER_URL);
+    /* eslint-disable no-new */
+    new InputHandler(searchInput, searchInputDelay, () => {
+        searchHandler.newSearch(searchInput.nodeValue);
+    });
 
-    // initialise a Modeswitch
-    modeSwitchInit();
-
-    // start Personfinder
-    personFinderInit();
+    showMoreButton.addEventListener('click', () => {
+        console.log('showMore');
+        searchHandler.showMore();
+    });
 };
 
 init();
