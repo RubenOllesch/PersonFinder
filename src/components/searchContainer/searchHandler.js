@@ -13,6 +13,7 @@ export default class searchHandler {
 
     newSearch(searchString) {
         this.searchString = searchString;
+        this.skip = 0;
         _search();
     }
 
