@@ -7,13 +7,19 @@
 import htmlToElement from 'html-to-element';
 
 export default class Form {
-    constructor(target, title, inputs, buttonText) {
+    constructor(target, config) {
+        const {
+            title,
+            textInputs,
+            buttonText
+        } = config;
+
         const form = this._generateForm(title);
         target.appendChild(form);
 
         const formContent = document.querySelector('#formContent');
 
-        inputs.forEach((element) => {
+        textInputs.forEach((element) => {
             const {
                 type, name, placeholder, required
             } = element;

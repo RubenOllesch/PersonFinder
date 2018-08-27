@@ -1,2 +1,7 @@
-export const TAKE = 10;
-export const INPUTDELAY = 400;
+export default {
+    title: 'Suche nach chayns®-Sites',
+    placeholder: 'Suchen',
+    showMoreText: 'Mehr Anzeigen',
+    take: 10,
+    inputDelay: 400
+};
