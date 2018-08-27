@@ -4,8 +4,7 @@
 
 import SiteList from './siteList/siteList';
 import searchFetcher from './searchFetcher/searchFetcher';
-// import TAKE from '../../constants/searchParams';
-const TAKE = 10;
+import { TAKE } from '../../constants/searchParams';
 
 export default class searchHandler {
     constructor() {

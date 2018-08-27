@@ -1,11 +1,10 @@
 /* eslint-disable no-console */
 
 import InputHandler from './components/searchContainer/inputHandler/inputHandler';
-// import inputDelay from './constants/searchParams';
+import { inputDelay } from './constants/searchParams';
 import SearchHandler from './components/searchContainer/searchHandler';
 import './main.scss';
 
-const inputDelay = 600;
 const showMoreButton = document.querySelector('#showMoreButton');
 const searchInput = document.querySelector('#searchInput');
 
