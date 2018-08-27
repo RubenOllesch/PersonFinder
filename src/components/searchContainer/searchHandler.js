@@ -4,7 +4,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import SiteList from './siteList/siteList';
-import searchFetcher from '../../utils/searchFetcher';
+import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';
 import { TAKE, inputDelay } from '../../constants/searchParams';
 
@@ -37,7 +37,7 @@ export default class SearchHandler {
 
     async _addResults() {
         const url = this._generateURL();
-        const data = await searchFetcher(url);
+        const data = await jsonFetcher(url);
         const results = data.Data;
         results.forEach((site) => {
             this.siteList.addSite(site);
