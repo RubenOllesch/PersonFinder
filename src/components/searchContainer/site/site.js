@@ -7,7 +7,6 @@ const site = (siteData) => {
     const iconURL = `https://sub60.tobit.com/l/${siteData.siteId}`;
     const siteName = siteData.appstoreName;
 
-    // Create an Individual Child of the Userlist. Now you Can Write the actual HTML-Code in here
     const element = htmlToElement(`
         <div class="ListItem ListItem--clickable"  onclick="chayns.openUrlInBrowser('${siteURL}');">
             <div class="ListItem__head">
@@ -25,7 +24,6 @@ const site = (siteData) => {
             </div>
         </div>`);
 
-    // return the created Element
     return element;
 };
 

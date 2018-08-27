@@ -7,10 +7,10 @@ import searchFetcher from '../../utils/searchFetcher';
 import { TAKE } from '../../constants/searchParams';
 
 export default class SearchHandler {
-    constructor() {
+    constructor(display) {
         this.searchString = '';
         this.skip = 0;
-        this.siteList = new SiteList();
+        this.siteList = new SiteList(display);
     }
 
     newSearch(searchString) {
@@ -29,9 +29,9 @@ export default class SearchHandler {
         const url = this._generateURL();
         const data = await searchFetcher(url);
         const results = data.Data;
-        for (const site of results) {
+        results.forEach((site) => {
             this.siteList.addSite(site);
-        }
+        });
     }
 
     _generateURL() {
