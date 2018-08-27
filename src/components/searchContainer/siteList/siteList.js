@@ -33,7 +33,7 @@ export default class siteList {
                 searchResultDisplay.appendChild(getSiteElement(site));
             }
         } else {
-            searchResultDisplay.innerHTML = 'Keine Seiten gefunden';
+            searchResultDisplay.innerHTML = '';
         }
     }
 }
