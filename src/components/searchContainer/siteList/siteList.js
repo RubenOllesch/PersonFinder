@@ -27,7 +27,6 @@ export default class siteList {
         const sites = this.sites;
 
         searchResultDisplay.innerHTML = '';
-        console.log(sites.length, sites);
         if (sites.length > 0) {
             // Add the Results to the sitelist
             for (const site of sites) {

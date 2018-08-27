@@ -28,10 +28,9 @@ export default class searchHandler {
     async _search() {
         const url = this._generateURL();
         const data = await searchFetcher(url);
-        console.log(data);
         const results = data.Data;
         for (const site of results) {
-            this.siteList.add(site);
+            this.siteList.addSite(site);
         }
     }
 
