@@ -1,8 +1,11 @@
 'use strict';
 
+/* eslint no-underscore-dangle: 0 */
+
 import SiteList from './siteList/siteList';
 import searchFetcher from './searchFetcher/searchFetcher';
-import TAKE from '../../constants/searchParams';
+// import TAKE from '../../constants/searchParams';
+const TAKE = 10;
 
 export default class searchHandler {
     constructor() {
@@ -14,17 +17,18 @@ export default class searchHandler {
     newSearch(searchString) {
         this.searchString = searchString;
         this.skip = 0;
-        _search();
+        this._search();
     }
 
     showMore() {
         this.skip += TAKE;
-        _search();
+        this._search();
     }
 
-    _search() {
-        const url = _generateURL();
+    async _search() {
+        const url = this._generateURL();
         const data = await searchFetcher(url);
+        console.log(data);
         const results = data.Data;
         for (const site of results) {
             this.siteList.add(site);
@@ -32,6 +36,6 @@ export default class searchHandler {
     }
 
     _generateURL() {
-        return `https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${this.searchString}&Skip=${this.skip}&Take=${TAKE}`;
+        return `https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${this.searchString}&Skip=${this.skip}&take=${TAKE}`;
     }
 }

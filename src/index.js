@@ -1,10 +1,11 @@
 /* eslint-disable no-console */
-import InputHandler from './components/searchContainer/inputHandler/inputHandler';
-import searchInputDelay from './constants/searchInputDelay';
-import SearchHandler from './components/searchContainer/searchHandler';
 
+import InputHandler from './components/searchContainer/inputHandler/inputHandler';
+// import inputDelay from './constants/searchParams';
+import SearchHandler from './components/searchContainer/searchHandler';
 import './main.scss';
 
+const inputDelay = 600;
 const showMoreButton = document.querySelector('#showMoreButton');
 const searchInput = document.querySelector('#searchInput');
 
@@ -13,8 +14,8 @@ const init = async () => {
     const searchHandler = new SearchHandler();
 
     /* eslint-disable no-new */
-    new InputHandler(searchInput, searchInputDelay, () => {
-        searchHandler.newSearch(searchInput.nodeValue);
+    new InputHandler(searchInput, inputDelay, () => {
+        searchHandler.newSearch(searchInput.value);
     });
 
     showMoreButton.addEventListener('click', () => {
