@@ -10,7 +10,7 @@ export default class SiteList {
 
     addSite(site) {
         this.sites.push(site);
-        this.render();
+        this._render();
     }
 
     clearSites() {

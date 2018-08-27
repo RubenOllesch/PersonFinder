@@ -1,11 +1,9 @@
 /* eslint no-new: 0 */
 
-import './main.scss';
-
-import Form from './components/formContainer/formElement';
+import Form from './components/formContainer/formElement/formElement';
 import formConfig from './constants/formConfig';
 
-import Search from './components/searchContainer/searchElement';
+import Search from './components/searchContainer/searchHandler';
 import searchConfig from './constants/searchConfig';
 
 const formField = document.querySelector('#form');

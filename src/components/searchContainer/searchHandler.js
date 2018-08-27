@@ -3,7 +3,7 @@
 /* eslint no-new: 0 */
 /* eslint no-underscore-dangle: 0 */
 
-import htmlToElement from 'html-to-element';
+import generateSearch from './searchElement/searchElement';
 import SiteList from './siteList/siteList';
 import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';
@@ -18,7 +18,7 @@ export default class SearchHandler {
             inputDelay
         } = config;
 
-        const search = this._generateSearch(title, placeholder, showMoreText);
+        const search = generateSearch(title, placeholder, showMoreText);
         target.appendChild(search);
 
         const searchInput = document.querySelector('#searchInput');
@@ -61,32 +61,5 @@ export default class SearchHandler {
 
     _generateURL() {
         return `https://chayns1.tobit.com/TappApi/Site/SlitteApp?SearchString=${this.searchString}&Skip=${this.skip}&take=${this.take}`;
-    }
-
-    _generateSearch(title, placeholder, searchMoreText) {
-        this.search = htmlToElement(`
-            <div class="accordion accordion--open" style="overflow: hidden; margin-top: 30px;">
-                <div class="accordion__head">
-                    <div class="accordion--trigger accordion__head--search--wrapper" >
-                        <div class="accordion--trigger accordion__head--search">
-                            ${title}
-                        </div>
-                    </div>
-                    <div class="Suche Suche--accordion">
-                        <input class="input" id="searchInput" placeholder="${placeholder}" type="text">
-                        <label>
-                            <i class="fa fa-search"></i>
-                        </label>
-                    </div>
-                </div>
-                <div class="accordion__body">
-                    <div id="searchResultBox"></div>
-                    <div class="right">
-                        <a id="searchMoreButton" href="#">${searchMoreText}</a>
-                    </div>
-                </div>
-            </div>
-        `);
-        return this.search;
     }
 }

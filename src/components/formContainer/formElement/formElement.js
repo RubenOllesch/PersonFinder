@@ -5,6 +5,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import htmlToElement from 'html-to-element';
+import './formElement.scss';
 
 export default class Form {
     constructor(target, config) {
