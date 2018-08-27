@@ -6,7 +6,7 @@
 import SiteList from './siteList/siteList';
 import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';
-import { TAKE, INPUTDELAY } from '../../constants/searchParams';
+import { TAKE, INPUTDELAY } from '../../constants/searchConfig';
 
 export default class SearchHandler {
     constructor(display, searchInput, searchMoreButton) {
