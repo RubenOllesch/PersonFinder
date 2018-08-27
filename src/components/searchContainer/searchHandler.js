@@ -6,7 +6,7 @@ import SiteList from './siteList/siteList';
 import searchFetcher from '../../utils/searchFetcher';
 import { TAKE } from '../../constants/searchParams';
 
-export default class searchHandler {
+export default class SearchHandler {
     constructor() {
         this.searchString = '';
         this.skip = 0;
