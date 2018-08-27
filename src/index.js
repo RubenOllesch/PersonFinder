@@ -1,4 +1,4 @@
-import InputHandler from './components/searchContainer/inputHandler/inputHandler';
+import InputHandler from './utils/inputHandler';
 import { inputDelay } from './constants/searchParams';
 import SearchHandler from './components/searchContainer/searchHandler';
 import './main.scss';
