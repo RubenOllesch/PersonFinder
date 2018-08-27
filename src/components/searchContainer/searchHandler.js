@@ -9,12 +9,12 @@ import InputHandler from '../../utils/inputHandler';
 import { TAKE, inputDelay } from '../../constants/searchParams';
 
 export default class SearchHandler {
-    constructor(display, searchInput, searchMore) {
+    constructor(display, searchInput, searchMoreButton) {
         this.searchString = '';
         this.skip = 0;
         this.siteList = new SiteList(display);
 
-        searchMore.addEventListener('click', () => {
+        searchMoreButton.addEventListener('click', () => {
             this._showMore();
         });
 

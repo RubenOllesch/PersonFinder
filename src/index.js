@@ -12,9 +12,8 @@ const searchMore = document.querySelector('#showMoreButton');
 
 const init = async () => {
     await chayns.ready;
-
-    new Form(formField, formConfig, 'Absenden');
     new SearchHandler(searchField, searchInput, searchMore);
+    new Form(formField, formConfig, 'Absenden');
 };
 
 init();
