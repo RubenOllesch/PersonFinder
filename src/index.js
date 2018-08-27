@@ -1,23 +1,18 @@
-import InputHandler from './utils/inputHandler';
-import { inputDelay } from './constants/searchParams';
-import SearchHandler from './components/searchContainer/searchHandler';
-import './main.scss';
+/* eslint no-new: 0 */
 
-const showMoreButton = document.querySelector('#showMoreButton');
-const searchInput = document.querySelector('#searchInput');
+import Form from './components/formContainer/formHandler';
+import formConfig from './constants/formConfig';
+
+import Search from './components/searchContainer/searchHandler';
+import searchConfig from './constants/searchConfig';
+
+const formField = document.querySelector('#form');
+const searchField = document.querySelector('#search');
 
 const init = async () => {
     await chayns.ready;
-    const searchHandler = new SearchHandler();
-
-    /* eslint-disable no-new */
-    new InputHandler(searchInput, inputDelay, () => {
-        searchHandler.newSearch(searchInput.value);
-    });
-
-    showMoreButton.addEventListener('click', () => {
-        searchHandler.showMore();
-    });
+    new Form(formField, formConfig);
+    new Search(searchField, searchConfig);
 };
 
 init();

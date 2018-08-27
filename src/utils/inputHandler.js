@@ -2,8 +2,8 @@
 
 // calls callback after input has not changed for ${delay} ms
 
-export default class inputHandler {
-    constructor(input, delay, callback) {
+export default class InputHandler {
+    static addInput(input, delay, callback) {
         this.lastTimeout = 0;
         input.addEventListener('input', () => {
             clearTimeout(this.lastTimeout);
