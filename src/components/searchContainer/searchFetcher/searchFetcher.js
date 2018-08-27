@@ -1,8 +1,9 @@
-export default async (url) => {
-    const data = await fetch(url);
-    if (data.ok) {
-        return data.json();
-    }
-    // if data != ok
-    throw Error(data.statusText);
-};
+export default url => new Promise((resolve, reject) => {
+        try {
+            fetch(url).then((data) => {
+                resolve(data.json());
+            });
+        } catch (error) {
+            reject(error);
+        }
+    });

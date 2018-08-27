@@ -1,11 +1,10 @@
 import getSiteElement from '../site/site';
-// import searchResultDisplay from '../../constants/siteElements';
 
 const searchResultDisplay = document.querySelector('#searchResultBox');
 
 export default class siteList {
     constructor() {
-        // Each time you Call `new siteList()` an Array is initialised.
+        // Each time you call `new siteList()` an Array is initialised.
         // With the `this` in front the array is not bound to the function anymore, but to the whole Class. Because `this` referes to the Class
         this.sites = [];
     }
@@ -28,7 +27,6 @@ export default class siteList {
         const sites = this.sites;
 
         searchResultDisplay.innerHTML = '';
-        console.log(sites.length, sites);
         if (sites.length > 0) {
             // Add the Results to the sitelist
             for (const site of sites) {

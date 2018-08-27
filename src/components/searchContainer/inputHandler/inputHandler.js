@@ -1,6 +1,6 @@
 'use strict';
 
-// calls callback after input has not changed for delay ms
+// calls callback after input has not changed for ${delay} ms
 
 export default class inputHandler {
     constructor(input, delay, callback) {
