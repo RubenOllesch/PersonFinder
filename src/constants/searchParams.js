@@ -1,2 +1,2 @@
 export const TAKE = 10;
-export const inputDelay = 400;
+export const INPUTDELAY = 400;
