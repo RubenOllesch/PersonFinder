@@ -1,4 +1,4 @@
-export default [
+export const textInputs = [
     {
         type: 'input',
         name: 'name',
@@ -22,5 +22,8 @@ export default [
         name: 'comment',
         placeholder: 'Kommentar (optional)',
         required: false
-    },
+    }
 ];
+
+export const buttonText = 'Hinzufügen';
+
