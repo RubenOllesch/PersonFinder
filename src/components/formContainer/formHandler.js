@@ -7,6 +7,7 @@
 import htmlToElement from 'html-to-element';
 
 import generateForm from './formElement/formElement';
+import TextInputList from './formInputList';
 
 export default class Form {
     constructor(target, config) {
@@ -21,21 +22,17 @@ export default class Form {
 
         const formContent = document.querySelector('#formContent');
 
+        this.inputList = new TextInputList(formContent);
+
         textInputs.forEach((element) => {
-            const {
-                type, name, placeholder, required
-            } = element;
-            formContent.appendChild(this._generateInput(type, name, placeholder, required));
+            this.inputList.addInput(element);
         });
 
-        formContent.appendChild(this._generateButton(buttonText));
-    }
-
-    _generateInput(type, name, placeholder, required) {
-        this.input = htmlToElement(`
-            <${type} class="input" id="${name}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} autogrow></${type}>
-        `);
-        return this.input;
+        const confirmButton = this._generateButton(buttonText);
+        confirmButton.addEventListener('click', () => {
+            console.log(TextInputList.getValues());
+        });
+        formContent.appendChild(confirmButton);
     }
 
     _generateButton(text) {

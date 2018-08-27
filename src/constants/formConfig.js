@@ -3,25 +3,25 @@ export default {
     textInputs: [
         {
             type: 'input',
-            name: 'name',
+            id: 'name',
             placeholder: 'Name der Site',
             required: true
         },
         {
             type: 'input',
-            name: 'address',
+            id: 'address',
             placeholder: 'Web-Adresse',
             required: true
         },
         {
             type: 'input',
-            name: 'mail',
+            id: 'mail',
             placeholder: 'E-Mail',
             required: true
         },
         {
             type: 'textarea',
-            name: 'comment',
+            id: 'comment',
             placeholder: 'Kommentar (optional)',
             required: false
         }
