@@ -3,7 +3,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import SiteList from './siteList/siteList';
-import searchFetcher from './searchFetcher/searchFetcher';
+import searchFetcher from '../../utils/searchFetcher';
 import { TAKE } from '../../constants/searchParams';
 
 export default class searchHandler {
