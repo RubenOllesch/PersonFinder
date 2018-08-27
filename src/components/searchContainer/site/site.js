@@ -9,7 +9,7 @@ const site = (siteData) => {
 
     // Create an Individual Child of the Userlist. Now you Can Write the actual HTML-Code in here
     const element = htmlToElement(`
-        <div class="ListItem ListItem--clickable"  onclick="chayns.openUrlInBrowser(${siteURL});">
+        <div class="ListItem ListItem--clickable"  onclick="chayns.openUrlInBrowser('${siteURL}');">
             <div class="ListItem__head">
                 <div class="ListItem__Image">
                     <img style="background-image: url(${iconURL})">
@@ -19,7 +19,7 @@ const site = (siteData) => {
                         ${siteName}
                     </p>
                     <p class="ListItem__Title--description">
-                        description
+                        
                     </p>
                 </div>
             </div>
