@@ -8,6 +8,7 @@ import htmlToElement from 'html-to-element';
 
 import generateForm from './formElement/formElement';
 import TextInputList from './formInputList';
+import sendJSON from '../../utils/jsonSender';
 
 export default class Form {
     constructor(target, config) {
@@ -29,8 +30,8 @@ export default class Form {
         });
 
         const confirmButton = this._generateButton(buttonText);
-        confirmButton.addEventListener('click', () => {
-            console.log(TextInputList.getValues());
+        confirmButton.addEventListener('click', () => {            
+            sendJSON(this.inputList.getValues());
         });
         formContent.appendChild(confirmButton);
     }
