@@ -1,12 +1,9 @@
-export default async (url) => {
-    return new Promise(function(resolve, reject) {
+export default url => new Promise((resolve, reject) => {
         try {
-            fetch(url).then(function(data) {
+            fetch(url).then((data) => {
                 resolve(data.json());
             });
-        }
-        catch {
+        } catch (error) {
             reject(error);
         }
-    });  
-};
+    });
