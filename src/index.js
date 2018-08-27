@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-
 import InputHandler from './components/searchContainer/inputHandler/inputHandler';
 import { inputDelay } from './constants/searchParams';
 import SearchHandler from './components/searchContainer/searchHandler';
@@ -18,7 +16,6 @@ const init = async () => {
     });
 
     showMoreButton.addEventListener('click', () => {
-        console.log('showMore');
         searchHandler.showMore();
     });
 };
