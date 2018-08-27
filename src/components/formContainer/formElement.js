@@ -11,7 +11,9 @@ export default class Form {
         const form = document.createElement('div');
 
         inputs.forEach((element) => {
-            const { type, name, placeholder, required } = element;
+            const {
+                type, name, placeholder, required
+            } = element;
             form.appendChild(this._generateInput(type, name, placeholder, required));
         });
 

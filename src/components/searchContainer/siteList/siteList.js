@@ -1,6 +1,8 @@
+/* eslint no-underscore-dangle: 0 */
+
 import getSiteElement from '../site/site';
 
-export default class siteList {
+export default class SiteList {
     constructor(display) {
         this.display = display;
         this.sites = [];
@@ -13,15 +15,13 @@ export default class siteList {
 
     clearSites() {
         this.sites = [];
-        this.render();
+        this._render();
     }
 
-    render() {
+    _render() {
         this.display.innerHTML = '';
-        if (this.sites.length > 0) {
-            this.sites.forEach((site) => {
-                this.display.appendChild(getSiteElement(site));
-            });
-        }
+        this.sites.forEach((site) => {
+            this.display.appendChild(getSiteElement(site));
+        });
     }
 }

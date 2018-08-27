@@ -1,26 +1,36 @@
 'use strict';
 
+/* eslint no-new: 0 */
 /* eslint no-underscore-dangle: 0 */
 
 import SiteList from './siteList/siteList';
 import searchFetcher from '../../utils/searchFetcher';
-import { TAKE } from '../../constants/searchParams';
+import InputHandler from '../../utils/inputHandler';
+import { TAKE, inputDelay } from '../../constants/searchParams';
 
 export default class SearchHandler {
-    constructor(display) {
+    constructor(display, searchInput, searchMore) {
         this.searchString = '';
         this.skip = 0;
         this.siteList = new SiteList(display);
+
+        searchMore.addEventListener('click', () => {
+            this._showMore();
+        });
+
+        new InputHandler(searchInput, inputDelay, () => {
+            this._newSearch(searchInput.value);
+        });
     }
 
-    newSearch(searchString) {
+    _newSearch(searchString) {
         this.searchString = searchString;
         this.skip = 0;
         this.siteList.clearSites();
         this._addResults();
     }
 
-    showMore() {
+    _showMore() {
         this.skip += TAKE;
         this._addResults();
     }
