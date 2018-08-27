@@ -16,15 +16,16 @@ export default class searchHandler {
     newSearch(searchString) {
         this.searchString = searchString;
         this.skip = 0;
-        this._search();
+        this.siteList.clearSites();
+        this._addResults();
     }
 
     showMore() {
         this.skip += TAKE;
-        this._search();
+        this._addResults();
     }
 
-    async _search() {
+    async _addResults() {
         const url = this._generateURL();
         const data = await searchFetcher(url);
         const results = data.Data;
