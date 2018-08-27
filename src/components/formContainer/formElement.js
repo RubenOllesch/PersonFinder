@@ -7,27 +7,27 @@
 import htmlToElement from 'html-to-element';
 
 export default class Form {
-    constructor(target, inputs, buttonText) {
-        const form = document.createElement('div');
+    constructor(target, title, inputs, buttonText) {
+        const form = this._generateForm(title);
+        target.appendChild(form);
+
+        const formContent = document.querySelector('#formContent');
 
         inputs.forEach((element) => {
             const {
                 type, name, placeholder, required
             } = element;
-            form.appendChild(this._generateInput(type, name, placeholder, required));
+            formContent.appendChild(this._generateInput(type, name, placeholder, required));
         });
 
-        form.appendChild(this._generateButton(buttonText));
-
-        target.appendChild(form);
+        formContent.appendChild(this._generateButton(buttonText));
     }
 
     _generateInput(type, name, placeholder, required) {
-        this.$autogrow = '';
-
-        return htmlToElement(`
-            <${type} class="input" id="${name}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} ${this.$autogrow}></${type}>
+        this.input = htmlToElement(`
+            <${type} class="input" id="${name}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} autogrow></${type}>
         `);
+        return this.input;
     }
 
     _generateButton(text) {
@@ -37,5 +37,17 @@ export default class Form {
             </div>
         `);
         return this.button;
+    }
+
+    _generateForm(title) {
+        this.form = htmlToElement(`
+            <div class="accordion">
+                <div class="accordion__head">${title}</div>
+                <div class="accordion__body">
+                    <div class="accordion__content" id="formContent"></div>
+                </div>
+            </div>
+        `);
+        return this.form;
     }
 }

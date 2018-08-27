@@ -1,3 +1,5 @@
+export const formTitle = 'Mache deine chayns®-Site für andere sichtbar';
+
 export const textInputs = [
     {
         type: 'input',
