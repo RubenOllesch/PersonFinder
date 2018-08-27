@@ -7,14 +7,15 @@ import SearchHandler from './components/searchContainer/searchHandler';
 import './main.scss';
 
 const formField = document.querySelector('#form');
-const showMoreButton = document.querySelector('#showMoreButton');
 const searchInput = document.querySelector('#searchInput');
+const searchField = document.querySelector('#searchResultBox');
+const showMoreButton = document.querySelector('#showMoreButton');
 
 const init = async () => {
     await chayns.ready;
     new Form(formField, formConfig, 'Absenden');
 
-    const searchHandler = new SearchHandler();
+    const searchHandler = new SearchHandler(searchField);
 
     new InputHandler(searchInput, inputDelay, () => {
         searchHandler.newSearch(searchInput.value);

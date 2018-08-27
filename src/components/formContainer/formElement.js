@@ -21,13 +21,13 @@ export default class Form {
     }
 
     _generateInput(type, name, placeholder, required) {
-        let $autogrow = '';
+        this.$autogrow = '';
         switch (type) {
             case 'simpleInput':
                 break;
 
             case 'textarea':
-                $autogrow = 'autogrow';
+                this.$autogrow = 'autogrow';
                 break;
 
             default:
@@ -35,17 +35,17 @@ export default class Form {
         }
 
         return htmlToElement(`
-            <${type} class="input" id="${name}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} ${$autogrow}></${type}>
+            <${type} class="input" id="${name}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} ${this.$autogrow}></${type}>
         `);
     }
 
     _generateButton(name, text) {
-        const button = htmlToElement(`
+        this.button = htmlToElement(`
             <div class="center">
                 <div class="button" id="${name}">${text}</div>
             </div>
         `);
 
-        return button;
+        return this.button;
         }
 }
