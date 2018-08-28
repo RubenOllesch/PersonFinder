@@ -7,11 +7,11 @@
 import htmlToElement from 'html-to-element';
 
 import generateForm from './formWrapper/formWrapper';
-import TextInputList from './formInputList';
+import TextInputList from './textInputList';
 import sendJSON from '../../utils/jsonSender';
 
 export default class Form {
-    constructor(target, config) {
+    constructor(display, config) {
         const {
             title,
             textInputs,
@@ -19,7 +19,7 @@ export default class Form {
         } = config;
 
         const form = generateForm(title);
-        target.appendChild(form);
+        display.appendChild(form);
 
         const formContent = document.querySelector('#formContent');
 

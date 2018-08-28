@@ -17,9 +17,11 @@ export default class TextInputList {
         const values = [];
         this.inputs.forEach((input) => {
             const value = document.querySelector(`#${input.id}`);
+
             const newInput = {};
             newInput.id = input.id;
             newInput.value = value.value;
+
             values.push(newInput);
         });
         return values;
