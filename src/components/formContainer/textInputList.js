@@ -1,17 +1,15 @@
-/* eslint no-underscore-dangle: 0 */
-
 import generateTextInput from './textInput/textInput';
 
 export default class TextInputList {
-    constructor(display) {
+    constructor(display, inputsConf) {
         this.display = display;
         this.inputs = [];
-    }
 
-    addInput(inputConf) {
-        const input = generateTextInput(inputConf);
-        this.inputs.push(input);
-        this.display.appendChild(input);
+        inputsConf.forEach((inputConf) => {
+            const input = generateTextInput(inputConf);
+            this.inputs.push(input);
+            this.display.appendChild(input);
+        });
     }
 
     getValues() {
@@ -20,7 +18,6 @@ export default class TextInputList {
             const newInput = {};
             newInput.id = input.id;
             newInput.value = input.value;
-
             values.push(newInput);
         });
         return values;

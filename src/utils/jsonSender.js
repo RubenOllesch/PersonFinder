@@ -4,7 +4,7 @@ export default async (jsonMessage) => {
         text: jsonMessage
     });
     chayns.hideWaitCursor();
-    if (data.status === 200) {
+    if (data.ok) {
         chayns.dialog.alert('Danke für deine Nachricht');
     } else {
         chayns.dialog.alert('Leider gab es einen Fehler');

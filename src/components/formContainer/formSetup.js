@@ -21,15 +21,11 @@ export default class Form {
 
         const formContent = form.querySelector('#formContent');
 
-        this.inputList = new TextInputList(formContent);
-
-        textInputs.forEach((element) => {
-            this.inputList.addInput(element);
-        });
+        const inputList = new TextInputList(formContent, textInputs);
 
         const confirmButton = generateButton(buttonText);
         confirmButton.addEventListener('click', () => {
-            sendMessage(this.inputList.getValues());
+            sendMessage(inputList.getValues());
         });
         formContent.appendChild(confirmButton);
 

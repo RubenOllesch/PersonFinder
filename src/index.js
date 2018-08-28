@@ -1,6 +1,6 @@
 /* eslint no-new: 0 */
 
-import Form from './components/formContainer/formHandler';
+import Form from './components/formContainer/formSetup';
 import Search from './components/searchContainer/searchHandler';
 
 import searchConfig from './constants/searchConfig';
