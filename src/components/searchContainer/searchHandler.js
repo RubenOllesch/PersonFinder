@@ -9,7 +9,7 @@ import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';
 
 export default class SearchHandler {
-    constructor(display, config) {
+    constructor(config) {
         const {
             title,
             placeholder,
@@ -19,7 +19,6 @@ export default class SearchHandler {
         } = config;
 
         const search = generateSearch(title, placeholder, showMoreText);
-        display.appendChild(search);
 
         const searchInput = search.querySelector('#searchInput');
         InputHandler.addInput(searchInput, inputDelay, () => {
@@ -36,6 +35,8 @@ export default class SearchHandler {
         this.searchString = '';
         this.skip = 0;
         this.take = take;
+
+        return search;
     }
 
     _newSearch(searchString) {

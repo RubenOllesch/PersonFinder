@@ -10,7 +10,7 @@ import TextInputList from './textInputList';
 import sendMessage from '../../utils/jsonSender';
 
 export default class Form {
-    constructor(display, config) {
+    constructor(config) {
         const {
             title,
             textInputs,
@@ -18,7 +18,6 @@ export default class Form {
         } = config;
 
         const form = generateForm(title);
-        display.appendChild(form);
 
         const formContent = form.querySelector('#formContent');
 
@@ -33,5 +32,7 @@ export default class Form {
             sendMessage(this.inputList.getValues());
         });
         formContent.appendChild(confirmButton);
+
+        return form;
     }
 }
