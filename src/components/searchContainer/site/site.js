@@ -10,8 +10,7 @@ export default (siteData) => {
     const element = htmlToElement(`
         <div class="ListItem ListItem--clickable"  onclick="chayns.openUrlInBrowser('${siteURL}');">
             <div class="ListItem__head">
-                <div class="ListItem__Image">
-                    <img style="background-image: url(${iconURL})">
+                <div class="ListItem__Image" style="background-image: url('${iconURL}')">
                 </div>
                 <div class="ListItem__Title">
                     <p class="ListItem__Title--headline">
