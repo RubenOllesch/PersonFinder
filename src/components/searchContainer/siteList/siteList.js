@@ -1,27 +1,25 @@
 /* eslint no-underscore-dangle: 0 */
 
-import getSiteElement from './site/site';
+import getSiteElement from '../siteList/site/site';
 
 export default class SiteList {
-    constructor(display) {
-        this.display = display;
+    constructor() {
         this.sites = [];
     }
 
     addSite(site) {
         this.sites.push(site);
-        this._render();
     }
 
     clearSites() {
         this.sites = [];
-        this._render();
     }
 
-    _render() {
-        this.display.innerHTML = '';
+    render() {
+        const element = document.createElement('div');
         this.sites.forEach((site) => {
-            this.display.appendChild(getSiteElement(site));
+            element.appendChild(getSiteElement(site));
         });
+        return element;
     }
 }

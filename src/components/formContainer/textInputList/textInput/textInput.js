@@ -10,7 +10,9 @@ export default (input) => {
         required
     } = input;
 
+    const requiredString = required ? 'required' : '';
+
     return htmlToElement(`
-    <${type} class="input" id="${id}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} autogrow></${type}>
+    <${type} class="input" id="${id}" type="text" placeholder="${placeholder}" ${requiredString} autogrow></${type}>
     `);
 };
