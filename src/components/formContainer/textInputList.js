@@ -1,4 +1,4 @@
-import generateTextInput from './textInput/textInput';
+import generateInput from './textInput/textInput';
 
 export default class TextInputList {
     constructor(display, inputsConf) {
@@ -6,7 +6,7 @@ export default class TextInputList {
         this.inputs = [];
 
         inputsConf.forEach((inputConf) => {
-            const input = generateTextInput(inputConf);
+            const input = generateInput(inputConf);
             this.inputs.push(input);
             this.display.appendChild(input);
         });

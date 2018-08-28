@@ -2,7 +2,7 @@ import htmlToElement from 'html-to-element';
 
 import './site.scss';
 
-const site = (siteData) => {
+export default (siteData) => {
     const siteURL = `https://chayns.net/${siteData.siteId}/aboutus`;
     const iconURL = `https://sub60.tobit.com/l/${siteData.siteId}`;
     const siteName = siteData.appstoreName;
@@ -18,7 +18,6 @@ const site = (siteData) => {
                         ${siteName}
                     </p>
                     <p class="ListItem__Title--description">
-                        
                     </p>
                 </div>
             </div>
@@ -26,5 +25,3 @@ const site = (siteData) => {
 
     return element;
 };
-
-export default site;
