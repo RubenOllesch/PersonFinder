@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 
-import generateTextInput from './formTextInput';
+import generateTextInput from './textInput/textInput';
 
 export default class TextInputList {
     constructor(display) {

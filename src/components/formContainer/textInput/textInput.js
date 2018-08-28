@@ -1,5 +1,7 @@
 import htmlToElement from 'html-to-element';
 
+import './textInput.scss';
+
 export default (input) => {
     const {
         type,
