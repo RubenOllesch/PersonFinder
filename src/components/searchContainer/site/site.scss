@@ -23,11 +23,7 @@
   height: 40px;
   width: 40px;
   margin-right: 10px;
-}
-
-.ListItem__Image img {
-  height: 100%;
-  width: 100%;
+  display: block;
   outline: 1px solid rgba(0,0,0,.08);
 }
 

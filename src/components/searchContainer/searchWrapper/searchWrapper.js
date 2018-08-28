@@ -1,6 +1,6 @@
 import htmlToElement from 'html-to-element';
 
-import './searchElement.scss';
+import './searchWrapper.scss';
 
 export default (title, placeholder, searchMoreText) => htmlToElement(`
     <div class="accordion accordion--open" style="overflow: hidden; margin-top: 30px;">

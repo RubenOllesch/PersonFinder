@@ -4,7 +4,7 @@
 
 export default class InputHandler {
     static addInput(input, delay, callback) {
-        this.lastTimeout = 0;
+        this.lastTimeout = undefined;
         input.addEventListener('input', () => {
             clearTimeout(this.lastTimeout);
             this.lastTimeout = setTimeout(callback, delay);

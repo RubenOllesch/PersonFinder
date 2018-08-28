@@ -1,6 +1,6 @@
 /* eslint no-underscore-dangle: 0 */
 
-import getSiteElement from '../site/site';
+import getSiteElement from './site/site';
 
 export default class SiteList {
     constructor(display) {
