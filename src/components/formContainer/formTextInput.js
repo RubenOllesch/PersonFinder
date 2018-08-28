@@ -7,7 +7,7 @@ export default (input) => {
         placeholder,
         required
     } = input;
-    
+
     return htmlToElement(`
     <${type} class="input" id="${id}" type="text" placeholder="${placeholder}" ${required ? 'required' : ''} autogrow></${type}>
     `);

@@ -4,7 +4,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import generateSearch from './searchElement/searchElement';
-import SiteList from './siteList/siteList';
+import SiteList from './siteList';
 import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';
 
