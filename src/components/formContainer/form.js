@@ -5,7 +5,7 @@
 /* eslint no-underscore-dangle: 0 */
 
 import htmlToElement from 'html-to-element';
-import TextInputList from './textInputList';
+import TextInputList from './textInputList/textInputList';
 import Button from './centerButton/centerButton';
 import sendFormToSite from '../../utils/jsonSender';
 
