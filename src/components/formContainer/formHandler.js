@@ -4,11 +4,10 @@
 
 /* eslint no-underscore-dangle: 0 */
 
-import htmlToElement from 'html-to-element';
-
-import generateForm from './formWrapper/formWrapper';
+import generateForm from './formWrapper';
+import generateButton from './sendButton/sendButton';
 import TextInputList from './textInputList';
-import sendJSON from '../../utils/jsonSender';
+import sendMessage from '../../utils/jsonSender';
 
 export default class Form {
     constructor(display, config) {
@@ -21,7 +20,7 @@ export default class Form {
         const form = generateForm(title);
         display.appendChild(form);
 
-        const formContent = document.querySelector('#formContent');
+        const formContent = form.querySelector('#formContent');
 
         this.inputList = new TextInputList(formContent);
 
@@ -29,19 +28,10 @@ export default class Form {
             this.inputList.addInput(element);
         });
 
-        const confirmButton = this._generateButton(buttonText);
+        const confirmButton = generateButton(buttonText);
         confirmButton.addEventListener('click', () => {
-            sendJSON(this.inputList.getValues());
+            sendMessage(this.inputList.getValues());
         });
         formContent.appendChild(confirmButton);
-    }
-
-    _generateButton(text) {
-        this.button = htmlToElement(`
-            <div class="center">
-                <div class="button" id="sendButton">${text}</div>
-            </div>
-        `);
-        return this.button;
     }
 }

@@ -21,17 +21,17 @@ export default class SearchHandler {
         const search = generateSearch(title, placeholder, showMoreText);
         display.appendChild(search);
 
-        const searchInput = document.querySelector('#searchInput');
+        const searchInput = search.querySelector('#searchInput');
         InputHandler.addInput(searchInput, inputDelay, () => {
             this._newSearch(searchInput.value);
         });
 
-        const searchMoreButton = document.querySelector('#searchMoreButton');
+        const searchMoreButton = search.querySelector('#searchMoreButton');
         searchMoreButton.addEventListener('click', () => {
             this._showMore();
         });
 
-        const searchResultBox = document.querySelector('#searchResultBox');
+        const searchResultBox = search.querySelector('#searchResultBox');
         this.siteList = new SiteList(searchResultBox);
         this.searchString = '';
         this.skip = 0;

@@ -1,7 +1,5 @@
 import htmlToElement from 'html-to-element';
 
-import './formWrapper.scss';
-
 export default title => htmlToElement(`
     <div class="accordion">
         <div class="accordion__head">${title}</div>
