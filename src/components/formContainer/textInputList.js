@@ -8,26 +8,21 @@ export default class TextInputList {
         this.inputs = [];
     }
 
-    addInput(input) {
+    addInput(inputConf) {
+        const input = generateTextInput(inputConf);
         this.inputs.push(input);
-        this._addToDisplay(input);
+        this.display.appendChild(input);
     }
 
     getValues() {
         const values = [];
         this.inputs.forEach((input) => {
-            const value = document.querySelector(`#${input.id}`);
-
             const newInput = {};
             newInput.id = input.id;
-            newInput.value = value.value;
+            newInput.value = input.value;
 
             values.push(newInput);
         });
         return values;
-    }
-
-    _addToDisplay(input) {
-        this.display.appendChild(generateTextInput(input));
     }
 }
