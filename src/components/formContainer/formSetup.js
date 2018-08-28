@@ -18,15 +18,16 @@ export default class Form {
         } = config;
 
         const form = generateForm(title);
-
         const formContent = form.querySelector('#formContent');
 
-        const inputList = new TextInputList(formContent, textInputs);
+        const inputList = new TextInputList(textInputs);
 
         const confirmButton = generateButton(buttonText);
         confirmButton.addEventListener('click', () => {
             sendMessage(inputList.getValues());
         });
+
+        formContent.appendChild(inputList);
         formContent.appendChild(confirmButton);
 
         return form;
