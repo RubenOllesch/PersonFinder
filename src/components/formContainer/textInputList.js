@@ -1,15 +1,17 @@
 import generateInput from './textInput/textInput';
 
 export default class TextInputList {
-    constructor(display, inputsConf) {
-        this.display = display;
+    constructor(inputsConf) {
+        const inputList = document.createElement('div');
+
         this.inputs = [];
 
         inputsConf.forEach((inputConf) => {
             const input = generateInput(inputConf);
             this.inputs.push(input);
-            this.display.appendChild(input);
+            inputList.appendChild(input);
         });
+        return inputList;
     }
 
     getValues() {
