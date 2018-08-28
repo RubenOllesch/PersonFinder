@@ -8,7 +8,7 @@ import SiteList from './siteList';
 import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';
 
-export default class SearchHandler {
+export default class SearchSetup {
     constructor(config) {
         const {
             title,
@@ -32,6 +32,7 @@ export default class SearchHandler {
 
         const searchResultBox = search.querySelector('#searchResultBox');
         this.siteList = new SiteList(searchResultBox);
+
         this.searchString = '';
         this.skip = 0;
         this.take = take;
