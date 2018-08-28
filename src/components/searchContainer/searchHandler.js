@@ -3,7 +3,7 @@
 /* eslint no-new: 0 */
 /* eslint no-underscore-dangle: 0 */
 
-import generateSearch from './searchElement/searchElement';
+import generateSearch from './searchWrapper/searchWrapper';
 import SiteList from './siteList';
 import jsonFetcher from '../../utils/jsonFetcher';
 import InputHandler from '../../utils/inputHandler';

@@ -6,7 +6,7 @@
 
 import htmlToElement from 'html-to-element';
 
-import generateForm from './formElement/formElement';
+import generateForm from './formWrapper/formWrapper';
 import TextInputList from './formInputList';
 import sendJSON from '../../utils/jsonSender';
 
@@ -30,7 +30,7 @@ export default class Form {
         });
 
         const confirmButton = this._generateButton(buttonText);
-        confirmButton.addEventListener('click', () => {            
+        confirmButton.addEventListener('click', () => {
             sendJSON(this.inputList.getValues());
         });
         formContent.appendChild(confirmButton);
