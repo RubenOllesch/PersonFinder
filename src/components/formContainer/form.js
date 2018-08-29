@@ -12,17 +12,29 @@ import sendFormToSite from '../../utils/jsonSender';
 export default class Form {
     constructor(display, config) {
         this.display = display;
-
         const {
             title,
             textInputs,
             buttonText
         } = config;
 
-        this.title = title;
+        this.element = htmlToElement(`
+            <div class="accordion">
+                <div class="accordion__head">${title}</div>
+                <div class="accordion__body">
+                    <div class="accordion__content">
+                        <div id="inputList"></div>
+                        <div id="sendButton"></div>
+                    </div>
+                </div>
+            </div>
+        `);
 
-        this.textInputList = new TextInputList(textInputs);
-        this.sendButton = new Button(buttonText, () => {
+        const listContainer = this.element.querySelector('#inputList');
+        const buttonContainer = this.element.querySelector('#sendButton');
+
+        this.textInputList = new TextInputList(listContainer, textInputs);
+        this.sendButton = new Button(buttonContainer, buttonText, () => {
             sendFormToSite(this.textInputList.getContent());
         });
 
@@ -31,20 +43,6 @@ export default class Form {
 
     render() {
         this.display.innerHTML = '';
-
-        const element = htmlToElement(`
-            <div class="accordion">
-                <div class="accordion__head">${this.title}</div>
-                <div class="accordion__body">
-                    <div class="accordion__content">
-                    </div>
-                </div>
-            </div>
-        `);
-        const elementContent = element.querySelector('.accordion__content');
-        elementContent.appendChild(this.textInputList.render());
-        elementContent.appendChild(this.sendButton);
-
-        this.display.appendChild(element);
+        this.display.appendChild(this.element);
     }
 }

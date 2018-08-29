@@ -1,13 +1,20 @@
 import generateInput from './textInput/textInput';
 
 export default class TextInputList {
-    constructor(inputsConf) {
+    constructor(display, inputsConf) {
+        this.display = display;
         this.inputs = [];
 
         inputsConf.forEach((inputConf) => {
             const input = generateInput(inputConf);
             this.inputs.push(input);
         });
+
+        this.element = document.createElement('div');
+        this.inputs.forEach((input) => {
+            this.element.appendChild(input);
+        });
+        this.render();
     }
 
     // returns only id's and values of the inputs
@@ -17,10 +24,7 @@ export default class TextInputList {
     }
 
     render() {
-        const element = document.createElement('div');
-        this.inputs.forEach((input) => {
-            element.appendChild(input);
-        });
-        return element;
+        this.display.innerHTML = '';
+        this.display.appendChild(this.element);
     }
 }
