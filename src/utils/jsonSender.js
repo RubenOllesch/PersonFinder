@@ -7,6 +7,6 @@ export default async (jsonMessage) => {
     if (data.ok) {
         chayns.dialog.alert('Danke für deine Nachricht');
     } else {
-        chayns.dialog.alert('Leider gab es einen Fehler');
+        chayns.dialog.alert('Leider gab es einen Fehler beim Verschicken');
     }
 };

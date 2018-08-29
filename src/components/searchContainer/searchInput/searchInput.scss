@@ -1,0 +1,66 @@
+.accordion .accordion__head {
+    white-space: nowrap !important;
+}
+
+.accordion .accordion__head .accordion__head--search--wrapper {
+    display: inline-table;
+}
+
+.accordion.accordion--open .accordion__head .accordion__head--search--wrapper .accordion__head--search {
+    max-width: 80%;
+}
+.accordion.accordion--open .accordion__head .Suche {
+    opacity: 1;
+    transform: translateZ(0);
+}
+
+.accordion .accordion__head .Suche {
+    transition-property: opacity .3s, transform .3s;
+    opacity: 0;
+    transition-duration: 0.3s, 0.3s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+    transform: translate3d(100%, 0, 0);
+    position: absolute;
+    top: 4px;
+    right: 9px;
+}
+
+.Suche.Suche--accordion input, .Suche.Suche--accordion label i {
+    font-size: 14px !important;
+}
+
+.Suche label {
+    max-height: 28px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    font-size: 14px !important;
+}
+
+.Suche label i {
+    opacity: .6;
+}
+
+.Suche.Suche--accordion {
+    width: 40%;
+    float: right;
+}
+
+.Suche {
+    display: flex;
+    align-items: flex-start;
+    max-height: 28px;
+}
+
+.input {
+    width: 100%;
+    border-width: 0px;
+    border-bottom-width: 1px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-bottom: 4px;
+    padding-left: 8px;
+    border-radius: 0 !important;
+}
